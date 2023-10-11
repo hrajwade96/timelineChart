@@ -1,38 +1,12 @@
 <html>
-
 <head>
     <script src="https://visjs.github.io/vis-timeline/standalone/umd/vis-timeline-graph2d.min.js"></script>
     <link href="https://visjs.github.io/vis-timeline/styles/vis-timeline-graph2d.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+
     <script src="timeline.js" defer></script>
     <style>
-        body,
-        html {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            height: 100%;
-        }
 
-        #upload,
-        #controls {
-            margin: 15px;
-        }
-
-        #visualization {
-            width: 100%;
-            height: 80vh;
-            border: 1px solid lightgray;
-        }
-
-        textarea {
-            width: 100%;
-            margin: 15px;
-            height: 100px;
-        }
-
-        button {
-            margin: 15px;
-        }
     </style>
           <input type="file" id="upload" accept=".json"/>
 </head>
@@ -40,7 +14,25 @@
 <body>
     <textarea id="jsonData" placeholder="Paste your JSON data here..."></textarea>
     <button onclick="loadData()">Load Data</button>
+    <div class="example">
+        <p> Sample input :</p>
+        <pre><code>
+            [
+            {
+              "id": 0,
+              "content": "ProcessA",
+              "start": 1696932687462,
+              "end": 1696932687574
+            },
+            {
+              "id": 1,
+              "content": "ProcessB",
+              "start": 1696932687462,
+              "end": 1696932687600
+            }
+          ]
+        </code></pre>
+    </div>
     <div id="visualization"></div>
 </body>
-
 </html>
